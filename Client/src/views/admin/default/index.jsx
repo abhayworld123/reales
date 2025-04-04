@@ -19,7 +19,7 @@ import Card from "components/card/Card";
 import MiniStatistics from "components/card/MiniStatistics";
 import IconBox from "components/icons/IconBox";
 import { HSeparator } from "components/separator/Separator";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LuBuilding2 } from "react-icons/lu";
 import { MdAddTask, MdContacts, MdLeaderboard } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -199,7 +199,7 @@ export default function UserReports() {
           />}
       </SimpleGrid>
 
-      <Grid Grid templateColumns="repeat(12, 1fr)" gap={3} >
+      <Grid  templateColumns="repeat(12, 1fr)" gap={3} >
         {
           (emailModule?.isActive || callModule?.isActive) &&
           <GridItem rowSpan={2} colSpan={{ base: 12, md: 6 }}>
@@ -248,8 +248,7 @@ export default function UserReports() {
             {
               !isLoding ?
                 data && data.length > 0 && data?.map((item, i) => (
-                  <>
-                    <Box border={"1px solid #e5e5e5"} p={2} m={1} cursor={'pointer'} key={i} onClick={() => navigate(navigateTo[item.name])}>
+                    <Box key={item?.name || i} border={"1px solid #e5e5e5"} p={2} m={1} cursor={'pointer'} key={i} onClick={() => navigate(navigateTo[item.name])}>
                       <Flex justifyContent={"space-between"}>
                         <Text fontSize="sm" fontWeight={600} pb={2}>{item?.name}</Text>
                         <Text fontSize="sm" fontWeight={600} pb={2}><CountUpComponent targetNumber={item?.length} /></Text>
@@ -258,7 +257,6 @@ export default function UserReports() {
                         colorScheme={item?.color}
                         size='xs' value={item?.length} width={"100%"} />
                     </Box>
-                  </>
 
                 )) : <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}><Spinner /></div>
             }

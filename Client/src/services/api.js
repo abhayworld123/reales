@@ -4,7 +4,8 @@ import { constant } from "../constant"
 
 export const postApi = async (path, data, login) => {
     try {
-        let result = await axios.post(constant.baseUrl + path, data, {
+        const url = `${constant.baseUrl}${path}`;
+        let result = await axios.post(url, data, {
             headers: {
                 Authorization: localStorage.getItem("token") || sessionStorage.getItem("token")
             }
