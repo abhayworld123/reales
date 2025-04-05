@@ -41,13 +41,15 @@ const initializedSchemas = async () => {
 }
 
 const connectDB = async (DATABASE_URL, DATABASE) => {
+    
     try {
         const DB_OPTIONS = {
             dbName: DATABASE
         }
-
+        
         mongoose.set("strictQuery", false);
         await mongoose.connect(DATABASE_URL, DB_OPTIONS);
+     
 
         // const collectionsToDelete = ['abc', 'Report and analytics', 'test', 'krushil', 'bca', 'xyz', 'lkjhg', 'testssssss', 'tel', 'levajav', 'tellevajav', 'Contact'];
         // const db = mongoose.connection.db;
