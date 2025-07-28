@@ -37,7 +37,7 @@ export default function PaymentForm() {
                 mode: "cors",
                 body: JSON.stringify({
                     items: [
-                        { quantity: 1, price: values.amount, name: values.name, description: 'send to Prolink' },
+                        { quantity: 1, price: values.amount, name: values.name, description: 'send to RealBUilds' },
                     ],
                     customer_email: values.email,
                 }),

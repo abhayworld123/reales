@@ -36,7 +36,7 @@ const server = app.listen(port, () => {
 
 
 // Connect to MongoDB
-const DATABASE_URL = process.env.DB_URL || 'mongodb://127.0.0.1:27017'
-const DATABASE = process.env.DB || 'test'
+const DATABASE_URL = process.env.DB_URL;
+const DATABASE = 'test'
 
 db(DATABASE_URL, DATABASE);

@@ -40,13 +40,13 @@ export default function Footer() {
             fontWeight='500'
             color={textColor}
             target="_blank"
-            href='https://prolinkinfotech.com/'> Prolink Infotech.</Link> Need help, facing issues, or looking for a new feature? Contact us for paid support and services at <Link href='mailto:alternatecrm@gmail.com' fontWeight='500'
+            href='RealBUilds Infotech.com'>  RealBUilds Infotech.</Link> Need help, facing issues, or looking for a new feature? Contact us for paid support and services at <Link href='mailto:alternatecrm@gmail.com' fontWeight='500'
               color={textColor}
               target="_blank">alternatecrm@gmail.com</Link>
         </Text>
       </Text>
       {/* <List display='flex'>
-        <ListItem
+        <ListItemß
           me={{
             base: "20px",
             md: "44px",
